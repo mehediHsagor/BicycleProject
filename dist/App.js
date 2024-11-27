@@ -5,11 +5,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
+const Product_route_1 = require("./App/modules/Product.route");
+const Order_route_1 = require("./App/modules/Order/Order.route");
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use((0, cors_1.default)());
-app.get('/', (req, res) => {
+app.use('/api/v1/products', Product_route_1.productroute);
+app.use('/api/v1/orders', Order_route_1.Orderroute);
+const getAcontroller = (req, res) => {
     const a = 10;
     res.send(a);
-});
+};
+app.get('/', getAcontroller);
 exports.default = app;

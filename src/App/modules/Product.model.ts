@@ -1,6 +1,7 @@
 import { Schema, model, connect } from 'mongoose';
 import { product, product } from './product.interface';
 
+
 const productSchema = new Schema<product>({
   name: {
     type: String,
@@ -34,6 +35,19 @@ const productSchema = new Schema<product>({
     required: true,
     default: true,
   },
+});
+productSchema.pre('find', function (next) {
+  this.find({ isDeleted: { $ne: true } });
+  next();
+});
+
+productSchema.pre('findOne', function (next) {
+  this.find({ isDeleted: { $ne: true } });
+  next();
+});
+productSchema.pre('aggregate', function (next) {
+  this.pipeline().unshift({ $match: { isDeleted: { $ne: true } } });
+  next();
 });
 export  const productmodel = model<product> ('product',productSchema
 )
