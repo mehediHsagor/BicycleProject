@@ -1,6 +1,6 @@
 import express from "express";
 import { productcontroller } from "./Product.controler";
-import { productservice } from "./Product.Services";
+
 
 
 const router = express.Router(); // Fix the syntax for router declaration
