@@ -67,10 +67,16 @@ const updateallProduct =async(req: Request,res: Response)=>{
 
 }
 
-const deleteproductfromdb = async(req:Request, Res:Response)=>{
+const deleteproductfromdb = async(req:Request, res:Response)=>{
      const { id } = req.params;
        const result =await productservice.deleteProduct(id)
-       return result;
+    
+       res.status(200).send({
+          success:true,
+      
+           message: "Bicycles retrieved successfully",
+           product: result
+        })
 }
 const getoneproductfromdb = async (req: Request, res: Response)=>{
 

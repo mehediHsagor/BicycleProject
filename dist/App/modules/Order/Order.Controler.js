@@ -17,7 +17,7 @@ const createorder = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
         console.log("Order created");
         const result = yield Order_services_1.orderservices.createOrderintoDb(order);
         console.log(order);
-        res.status(201).json({
+        res.status(200).json({
             success: true,
             message: 'Order created successfully',
             order: result,

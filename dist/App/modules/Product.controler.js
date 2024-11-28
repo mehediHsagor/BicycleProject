@@ -56,10 +56,14 @@ const updateallProduct = (req, res) => __awaiter(void 0, void 0, void 0, functio
         console.log(err);
     }
 });
-const deleteproductfromdb = (req, Res) => __awaiter(void 0, void 0, void 0, function* () {
+const deleteproductfromdb = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req.params;
     const result = yield Product_Services_1.productservice.deleteProduct(id);
-    return result;
+    res.status(200).send({
+        success: true,
+        message: "Bicycles retrieved successfully",
+        product: result
+    });
 });
 const getoneproductfromdb = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req.params;
