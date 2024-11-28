@@ -1,8 +1,11 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+
+
+
 
 import { Request, Response } from "express";
 import { productservice } from "./Product.Services";
-const CreateProduct =async(req:Request, res:Response)=>{
+
+const CreateProduct =async(req: Request, res:Response)=>{
      console.log('hit')
      try{
         const product =req.body;
@@ -63,9 +66,10 @@ const updateallProduct =async(req: Request,res: Response)=>{
 
 
 }
-const deleteproductfromdb = async(req: Request, res: Response)=>{
+
+const deleteproductfromdb = async(req:Request, Res:Response)=>{
      const { id } = req.params;
-       const result =await productservice.deleteProduct(id);
+       const result =await productservice.deleteProduct(id)
        return result;
 }
 const getoneproductfromdb = async (req: Request, res: Response)=>{

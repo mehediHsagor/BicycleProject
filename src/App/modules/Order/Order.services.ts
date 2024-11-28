@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-wrapper-object-types */
 import { Order } from "./Order.interface";
 import { OrderModel } from "./Order.model";
 
@@ -23,10 +24,10 @@ import { OrderModel } from "./Order.model";
   return result;
   
  }
- const updateorder = async(userid:string, updatedatas:Object)=>{
+ const updateorder = async(userid:string, updatedata:Object)=>{
    try{
 
-      const result = await OrderModel.findByIdAndUpdate(userid, updatedatas,{new : true, runValidators: true})
+      const result = await OrderModel.findByIdAndUpdate(userid, updatedata,{new : true, runValidators: true})
       return result;
    }catch(err){
 

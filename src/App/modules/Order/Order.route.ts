@@ -8,7 +8,7 @@ console.log('route')
 
 router.post('/create-order', ordercontroler.createorder);
 router.get('/',ordercontroler.getorder)
-router.put('/id',orderservices.updateorder)
+
 router.get('/revenue',ordercontroler.revinefromdb)
 
 // Export the router for use in the main app

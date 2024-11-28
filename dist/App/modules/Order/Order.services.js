@@ -25,9 +25,9 @@ const Revenueorder = () => __awaiter(void 0, void 0, void 0, function* () {
     ]);
     return result;
 });
-const updateorder = (userid, updatedatas) => __awaiter(void 0, void 0, void 0, function* () {
+const updateorder = (userid, updatedata) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const result = yield Order_model_1.OrderModel.findByIdAndUpdate(userid, updatedatas, { new: true, runValidators: true });
+        const result = yield Order_model_1.OrderModel.findByIdAndUpdate(userid, updatedata, { new: true, runValidators: true });
         return result;
     }
     catch (err) {
