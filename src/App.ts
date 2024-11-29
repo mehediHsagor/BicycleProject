@@ -9,8 +9,15 @@ app.use(cors());
 app.use('/api/v1/products', productroute);
 app.use('/api/v1/orders', Orderroute);
  const getAcontroller = (req: Request, res: Response) => {
-  const a = 10;
-  res.send(a);
+ 
+
+  res.status(200).json({
+    success:true,
+
+     message: "Bicycles retrieved successfully",
+     
+  })
+
 
 
  }
